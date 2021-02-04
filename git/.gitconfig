@@ -1,0 +1,26 @@
+[user]
+	name = Robert Štojs
+	email = robert.stojs@gposteo.net
+	signingkey = 95CC4CA55A79BFD4
+[alias]
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	mc = diff --stat master HEAD
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+[core]
+	autocrlf = input
+	editor = nvim
+[push]
+	default = simple
+[gpg]
+	program = /usr/local/bin/gpg2
+; [init]
+;	templatedir = ~/.git_template
+; [commit]
+; 	gpgSign = true
+[diff]
+	submodule = log
