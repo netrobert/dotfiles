@@ -1,92 +1,59 @@
-syntax on
+" ~/.config/nvim/init.vim
+" Ash Bellett
 
-set guicursor=
-set noshowmatch
-set relativenumber
-set nohlsearch
-set hidden
-set noerrorbells
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
-set smartindent
-set nu
-set nowrap
-set ignorecase
-set smartcase
-set noswapfile
-set nobackup
-set undodir=~/.vim/undodir
-set undofile
-set incsearch
-set termguicolors
-set scrolloff=8
-
-" Give more space for displaying messages.
-set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=50
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-set colorcolumn=80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'mbbill/undotree'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'Soares/base16.nvim'
-Plug 'sheerun/vim-polyglot'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'preservim/nerdtree'
-
+" Plugins
+call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'vim-python/python-syntax'
 call plug#end()
 
-colorscheme chalk
-set background=dark
+let g:python_highlight_all = 1
 
-if executable('rg')
-    let g:rg_derive_root='true'
-endif
+" Visuals
+set number
+set ruler
 
-let loaded_matchparen = 1
-let mapleader = " "
+" Features
+syntax on
+set magic
+filetype plugin on
+filetype indent on
 
-let g:netrw_browse_split = 2
-let g:vrfr_rg = 'true'
-let g:netrw_banner = 0
-let g:netrw_winsize = 25
+" Tabs
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set smarttab
 
-let g:ctrlp_show_hidden = 1
+" Backspaces
+set backspace=eol,start,indent
 
-" GoTo code navigation.
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>rr <Plug>(coc-rename)
-nmap <leader>g[ <Plug>(coc-diagnostic-prev)
-nmap <leader>g] <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>gp <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
+" Brackets
+set showmatch
 
-" Nerdtree
-map <silent> <C-n> :NERDTreeFocus<CR>
+" Mouse
+set mouse=a
 
-fun! TrimWhitespace()
-    let l:save = winsaveview()
-    keeppatterns %s/\s\+$//e
-    call winrestview(l:save)
-endfun
+" Search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch
 
-autocmd BufWritePre * :call TrimWhitespace()
+" Hide tildes
+highlight EndOfBuffer ctermfg=0 ctermbg=0
+
+" Colours
+highlight Comment ctermbg=0 ctermfg=7
+highlight String ctermbg=0 ctermfg=6
+highlight Character ctermbg=0 ctermfg=3
+highlight Number ctermbg=0 ctermfg=1
+highlight Boolean ctermbg=0 ctermfg=1
+highlight Float ctermbg=0 ctermfg=1
+highlight Function ctermbg=0 ctermfg=4
+highlight Statement ctermbg=0 ctermfg=5
+highlight Operator ctermbg=0 ctermfg=5
+highlight Type ctermbg=0 ctermfg=5
+highlight PreProc ctermbg=0 ctermfg=5
+highlight Keyword ctermbg=0 ctermfg=6
+highlight LineNr ctermbg=0 ctermfg=7

@@ -1,35 +1,39 @@
-autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+#! /bin/zsh
 
-HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
-CASE_SENSITIVE=false
-zstyle :compinstall filename '/home/robert/.zshrc'
+# ~/.zshrc
+# Ash Bellett
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
+# History:
+
+# Location of history file:
+HISTFILE=~/.cache/zsh/history
+# Number of commands saved per session:
+HISTSIZE=1024
+# Number of commands saved overall:
+SAVEHIST=1024
+# Save timestamp and execution duration:
+setopt EXTENDED_HISTORY
+# Ignore duplicate commands:
+setopt HIST_IGNORE_DUPS
+
+# Completions:
+
+# Load completions:
+autoload -Uz compinit
+# Start completions:
 compinit
-_comp_options+=(globdots)		# Include hidden files.
+# Set completion style:
+zstyle ':completion:*' menu select
+# Auto-complete aliases:
+setopt COMPLETE_ALIASES
 
-export KEYTIMEOUT=1
+# Prompt:
 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
-
-# Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
-bindkey -e
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load prompt:
+autoload -Uz promptinit
+# Start prompt:
+promptinit
+# Define left prompt:
+PROMPT='%B%n%b: %/ - ' # boldface username
+# Define right prompt:
+#RPROMPT='%/' # current directory

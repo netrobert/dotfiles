@@ -20,5 +20,5 @@ while true; do
 	sleep 1m
 done&
 
-exec /home/robert/bin/startdwm
-#exec dwm
+#exec /home/robert/bin/startdwm
+exec dwm
