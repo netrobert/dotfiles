@@ -34,6 +34,10 @@ autoload -Uz promptinit
 # Start prompt:
 promptinit
 # Define left prompt:
-PROMPT='%B%n%b: %/ - ' # boldface username
+PROMPT='%B%n%b: %/ :: ' # boldface username
 # Define right prompt:
 #RPROMPT='%/' # current directory
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
