@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
+Plug 'miyakogi/seiya.vim'
 
 call plug#end()
 
@@ -27,6 +28,15 @@ set ruler
 let g:lightline = {
       \ 'colorscheme': 'jellybeans'
       \ }
+
+" Split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
 
 " Features
 syntax on
@@ -55,23 +65,27 @@ set ignorecase
 set smartcase
 set hlsearch
 
+" Transparency
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+
 " Hide tildes
-highlight EndOfBuffer ctermfg=0 ctermbg=0
+highlight EndOfBuffer ctermfg=0 ctermbg=NONE
 
 " Colours
-highlight Comment ctermbg=0 ctermfg=7
-highlight String ctermbg=0 ctermfg=6
-highlight Character ctermbg=0 ctermfg=3
-highlight Number ctermbg=0 ctermfg=1
-highlight Boolean ctermbg=0 ctermfg=1
-highlight Float ctermbg=0 ctermfg=1
-highlight Function ctermbg=0 ctermfg=4
-highlight Statement ctermbg=0 ctermfg=5
-highlight Operator ctermbg=0 ctermfg=5
-highlight Type ctermbg=0 ctermfg=5
-highlight PreProc ctermbg=0 ctermfg=5
-highlight Keyword ctermbg=0 ctermfg=6
-highlight LineNr ctermbg=0 ctermfg=7
+highlight Comment ctermbg=NONE ctermfg=7
+highlight String ctermbg=NONE ctermfg=6
+highlight Character ctermbg=NONE ctermfg=3
+highlight Number ctermbg=NONE ctermfg=1
+highlight Boolean ctermbg=NONE ctermfg=1
+highlight Float ctermbg=NONE ctermfg=1
+highlight Function ctermbg=NONE ctermfg=4
+highlight Statement ctermbg=NONE ctermfg=5
+highlight Operator ctermbg=NONE ctermfg=5
+highlight Type ctermbg=NONE ctermfg=5
+highlight PreProc ctermbg=NONE ctermfg=5
+highlight Keyword ctermbg=NONE ctermfg=6
+highlight LineNr ctermbg=NONE ctermfg=7
 
 let loaded_matchparen = 1
 let mapleader = " "
@@ -96,7 +110,7 @@ nmap <silent> <leader>gn <Plug>(coc-diagnostic-next-error)
 nnoremap <leader>cr :CocRestart
 
 " Nerdtree
-map <silent> <C-n> :NERDTreeFocus<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
