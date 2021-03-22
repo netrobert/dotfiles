@@ -1,0 +1,37 @@
+[options]
+font = Fira Code 14
+
+[colors]
+foreground = "#8F93A2"
+foreground_bold = "#8F93A2"
+cursor = "#8F93A2"
+cursor_foreground = "#0F111A"
+background = rgba(5.9, 6.7, 10.2, 0.90)
+
+# Black, White
+color0 = "#0F111A"
+color15 = "#464B5D"
+
+# Red
+color1 = "#FF5370"
+color9 = "#FF5370"
+
+# Green
+color2 = "#99C794"
+color10 = "#99C794"
+
+# Yellow
+color3 = "#C4E88D"
+color11 = "#C4E88D"
+
+# Blue
+color4 = "#82AAFF"
+color12 = "#82AAFF"
+
+# Purple
+color5 = "#C792EA"
+color13 = "#C792EA"
+
+# Cyan
+color6 = "#89DDFF"
+color14 = "#89DDFF"

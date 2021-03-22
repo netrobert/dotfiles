@@ -12,15 +12,16 @@ emacs --daemon
 
 # Statusbar loop
 while true; do
-	BATT=$(acpi | awk '{print $4}' | tr "," " ")
+	BATT=$(acpi | awk '{print "BATT: "$4}' | tr "," " ")
+    MEM=$(free -h | grep '^Mem' | awk '{print "MEM: "$3}' | tr "i" " ")
 	DATE=$(/bin/date +"%a %b %d %H:%M")
-	ROOT="$BATT$DATE"
+	ROOT="$BATT $MEM$DATE"
 	#echo $ROOT
 	xsetroot -name "$ROOT"
-	sleep 1m
+	sleep 20
 done&
 
-picom -b
 feh --bg-scale ./dotfiles/wallpaper/wallpaper.jpg
 #exec /home/robert/bin/startdwm
+picom &
 exec dwm

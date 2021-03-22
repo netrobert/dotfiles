@@ -16,6 +16,10 @@ Plug 'vim-syntastic/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'preservim/nerdtree'
 Plug 'miyakogi/seiya.vim'
+Plug 'cskeeters/vim-smooth-scroll'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'flw-cn/vim-nerdtree-l-open-h-close'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -72,6 +76,10 @@ highlight NonText ctermbg=none
 " Hide tildes
 highlight EndOfBuffer ctermfg=0 ctermbg=NONE
 
+" Hide split bar
+highlight VertSplit cterm=NONE
+
+
 " Colours
 highlight Comment ctermbg=NONE ctermfg=7
 highlight String ctermbg=NONE ctermfg=6
@@ -111,6 +119,8 @@ nnoremap <leader>cr :CocRestart
 
 " Nerdtree
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
