@@ -2,11 +2,11 @@
 font = Fira Code 14
 
 [colors]
-foreground = "#8F93A2"
+foreground = rgb(143, 147, 162)
 foreground_bold = "#8F93A2"
 cursor = "#8F93A2"
 cursor_foreground = "#0F111A"
-background = rgba(5.9, 6.7, 10.2, 0.90)
+background = rgba(15, 17, 26, 0.90)
 
 # Black, White
 color0 = "#0F111A"
