@@ -1,6 +1,7 @@
 #! /bin/zsh
 
 # ~/.zshrc
+export EDITOR=nvim
 
 # History:
 
