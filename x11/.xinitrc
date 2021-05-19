@@ -3,6 +3,7 @@ setxkbmap -option ctrl:nocaps
 xrdb -load ~/.Xresources
 xbindkeys &
 emacs --daemon
+xautolock -time 10 -locker slock &
 
 #Statusbar loop
 #while true; do
@@ -21,7 +22,14 @@ while true; do
 	sleep 20
 done&
 
-feh --bg-scale ./dotfiles/wallpaper/wallpaper.jpg
+# Wallpaper loop
+while true; do
+    feh --bg-fill ~/dotfiles/wallpaper/wallpaper4.jpg
+	sleep 30
+done&
+
+feh --bg-fill ~/dotfiles/wallpaper/wallpaper4.jpg
+
 #exec /home/robert/bin/startdwm
 picom &
 exec dwm

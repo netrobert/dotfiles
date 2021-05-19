@@ -1,6 +1,6 @@
 [user]
 	name = Robert Štojs
-	email = robert.stojs@gposteo.net
+	email = robert.stojs@hudlajf.com
 	signingkey = 95CC4CA55A79BFD4
 [alias]
     lol = log --graph --decorate --pretty=oneline --abbrev-commit
@@ -24,3 +24,5 @@
 ; 	gpgSign = true
 [diff]
 	submodule = log
+[init]
+	templatedir = /home/robert/.git-templates

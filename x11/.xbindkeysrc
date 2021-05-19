@@ -17,3 +17,7 @@
 # Decrease brightness
 "light -U 5"
    XF86MonBrightnessDown
+
+# Lock
+"i3lock-fancy-rapid radius 3 -b -i ~/dotfiles/wallpaper/wallpaper.jpg"
+   Mod4 + Super_L
