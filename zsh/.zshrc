@@ -1,7 +1,6 @@
 #! /bin/zsh
 
 # ~/.zshrc
-# Ash Bellett
 
 # History:
 
